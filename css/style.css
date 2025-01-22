@@ -1562,6 +1562,12 @@ a.text-primary {
       font-size: 22px;
       color: #38ff07; }
 
+
+#form-no-overflow {
+  position: relative;
+  margin-top: 15%;
+}      
+
 .form-box {
   background: #fdfdfd;
   padding: 40px;
