@@ -25,7 +25,7 @@ const db = getDatabase(app);
 
 
 document.getElementById("submit").addEventListener('click', function(e){
-
+e.preventDefault();
 
 const checkboxes = document.querySelectorAll("input[name='classtime']:checked")
 const classtime = Array.from(checkboxes).map(checkbox => checkbox.value);
