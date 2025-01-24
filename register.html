@@ -29,30 +29,10 @@
   <link rel="stylesheet" href="css/aos.css">
   <link rel="stylesheet" href="css/style.css">
 
-  <title>Learner Free Bootstrap Template by Untree.co</title>
+
 </head>
 
 <body>
-
-  <script src="https://www.gstatic.com/firebasejs/10.x.x/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/10.x.x/firebase-firestore.js"></script>
-  <script>
-      const firebaseConfig = {
-        apiKey: "AIzaSyC8kjvAGjni0ryp3OiNF3CwfPNB2aJTCvM",
-        authDomain: "bytelingo-academy.firebaseapp.com",
-        projectId: "bytelingo-academy",
-        storageBucket: "bytelingo-academy.firebasestorage.app",
-        messagingSenderId: "33197372741",
-        appId: "1:33197372741:web:6cd4b9c4074bd6858f7a2c",
-        measurementId: "G-45DFSE4RLD"
-      };
-    
-    // Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
-    const db = firebase.firestore();
-    </script>
-
-  <script> src="js/formToDb.js"></script>
 
 
   <div class="site-mobile-menu">
@@ -156,21 +136,42 @@
 
       <div id="form-no-overflow" class="row mb-5 justify-content-center">
         <div class="col-lg-5 mx-auto order-1" data-aos="fade-up" data-aos-delay="200">
-          <form action="#" class="form-box">
+          <form  id=" contactform" class="form-box">
             <div class="row">
               
               <div class="col-12 mb-3">
-                <input type="text" class="form-control" placeholder="Nome completo/Full name">
+                <input type="text" class="form-control" id="name" placeholder="Nome completo/Full name">
               </div>
               <div class="col-12 mb-3">
-                <input type="text" class="form-control" placeholder="Email">
+                <input type="text" class="form-control" id ="email" placeholder="Email">
               </div>
               <div class="col-12 mb-3">
-                <input type="tel" class="form-control" placeholder="Tel">
+                <input type="tel" class="form-control" id="phone" placeholder="Telefone/Phone">
+
               </div>
-              <div style=" background-color: #08080882"></div>> <p style=" position: relative; width: 90%;  left: 8%; text-emphasis-color: #fff; color:#00000082"> Melhor prevenir, né! Confirme seu numero </p></div>
+              <div><label > <span class="caption" style="font-weight: bolder; color: black;"> Em qual horário você pode ter Aulas? (Enfatizamos que você será informado dos horários com vagas abertas)</span></label></div>
+              
               <div class="col-12 mb-3">
-                <input type="tel" class="form-control" placeholder="reensira seu numero/ Re-type Tel">
+                <label for="horario" style="color: blue; font-weight: bold;">Horário:</label>
+
+                <fieldset class="form-group">
+                  <legend>Horários Preferidos:</legend>
+                  <label><input type="checkbox" name="classtime" value="07:00"> 07:00</label><br>
+                  <label><input type="checkbox" name="classtime" value="08:00"> 08:00</label><br>
+                  <label><input type="checkbox" name="classtime" value="09:00"> 09:00</label><br>
+                  <label><input type="checkbox" name="classtime" value="10:00"> 10:00</label><br>
+                  <label><input type="checkbox" name="classtime" value="11:00"> 11:00</label><br>
+                  <label><input type="checkbox" name="classtime" value="12:00"> 12:00</label><br>
+                  <label><input type="checkbox" name="classtime" value="13:00"> 13:00</label><br>
+                  <label><input type="checkbox" name="classtime" value="14:00"> 14:00</label><br>
+                  <label><input type="checkbox" name="classtime" value="15:00"> 15:00</label><br>
+                  <label><input type="checkbox" name="classtime" value="16:00"> 16:00</label><br>
+                  <label><input type="checkbox" name="classtime" value="17:00"> 17:00</label><br>
+                  <label><input type="checkbox" name="classtime" value="18:00"> 18:00</label><br>
+                  <label><input type="checkbox" name="classtime" value="19:00"> 19:00</label><br>
+                  <label><input type="checkbox" name="classtime" value="20:00"> 20:00</label><br>
+                  <label><input type="checkbox" name="classtime" value="21:00"> 21:00</label><br>
+                </fieldset>
               </div>
               <div class="col-12 mb-3">
                 <label class="control control--checkbox">
@@ -179,9 +180,10 @@
                   <div class="control__indicator"></div>
                 </label>
               </div>
+              
 
               <div class="col-12">
-                <input type="submit" value="Send Message" class="btn btn-primary">
+                <input type="submit" value="Send Message" id="submit" class="btn btn-primary">
               </div>
             </div>
           </form>
@@ -190,7 +192,7 @@
 
       
     </div>
-  </div> <!-- /.untree_co-section -->
+  </div> 
 
   <div class="site-footer">
 
@@ -265,9 +267,7 @@
       </div> <!-- /.row -->
 
       <div class="row mt-5">
-        <div class="col-12 text-center">
-          <p class="copyright">Copyright &copy;<script>document.write(new Date().getFullYear());</script>. All Rights Reserved. &mdash; Designed with love by <a href="https://untree.co">Untree.co</a>  Distributed By <a href="https://themewagon.com">ThemeWagon</a> <!-- License information: https://untree.co/license/ -->
-          </div>
+        
         </div>
       </div> <!-- /.container -->
     </div> <!-- /.site-footer -->
@@ -289,7 +289,13 @@
     <script src="js/jquery.sticky.js"></script>
     <script src="js/aos.js"></script>
     <script src="js/custom.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/11.2.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/11.2.0/firebase-firestore.js"></script>
+  
 
-  </body>
+  <script type="module" src="js/formToRealtimeDb.js"></script>
+  
 
-  </html>
+</body>
+
+</html>
