@@ -23,26 +23,31 @@ const app = initializeApp(firebaseConfig);
 const db = getDatabase(app);
 
 
+    document.getElementById("submit").addEventListener('click', function(e){
+      e.preventDefault();
+    if (!document.getElementById('checkbox').checked) {
+      alert("Aceite os termos e condições");
+      return;
+    }
+    const checkboxes = document.querySelectorAll("input[name='classtime']:checked")
+    const classtime = Array.from(checkboxes).map(checkbox => checkbox.value);
+    const email =   document.getElementById("email").value;
+    const sanitizedEmail = email.replace(/[.#$[\]]/g, "_");
+    
+    
+    try {
+     set(ref(db, `user/${sanitizedEmail}`),
+    {
+      username: document.getElementById("name").value,
+      email: email,
+      phone: document.getElementById("phone").value,
+      classtime: classtime,
+      message: document.getElementById("message").value,
+    }) ;
+    
+      
+    } catch (error) {
+      alert("ooops!")
+    }
+    })
 
-document.getElementById("submit").addEventListener('click', function(e){
-e.preventDefault();
-
-const checkboxes = document.querySelectorAll("input[name='classtime']:checked")
-const classtime = Array.from(checkboxes).map(checkbox => checkbox.value);
-const email =   document.getElementById("email").value;
-const sanitizedEmail = email.replace(/[.#$[\]]/g, "_");
-
-
-try {
- set(ref(db, `user/${sanitizedEmail}`),
-{
-  username: document.getElementById("name").value,
-  email: email,
-  phone: document.getElementById("phone").value,
-  classtime: classtime
-});
-  alert("Login Sucessfull  !");
-} catch (error) {
-  alert("ooops!")
-}
-})
